@@ -30,7 +30,7 @@ export function Items({item,addToCart}) {
           <span className="fw-bold text-success fs-6">${item.precio}</span>
           <button className="btn btn-sm btn-danger rounded-pill p-2" onClick={()=>addToCart(item)}>
             <i className="bi bi-cart-plus ms-2 me-1 "></i>
-            <span classNameName="me-2">Agregar al carrito</span>
+            <span className="me-2">Agregar al carrito</span>
           </button>
         </div>
       </div>

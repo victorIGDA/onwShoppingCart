@@ -45,7 +45,7 @@ export function Fotter() {
 
           <div className="col-md-4 mb-3">
             <h5>Contacto</h5>
-            <p>Email: info@mitiendatech.com</p>
+            <p>Email: info@IGTechnology.com</p>
             <p>Tel: +1 (809) 123-4567</p>
             <p>Dirección: Santo Domingo, RD</p>
           </div>
@@ -55,7 +55,7 @@ export function Fotter() {
 
         <div className="text-center">
           <p className="mb-0">
-            &copy; 2025 MiTiendaTech. Todos los derechos reservados.
+            &copy; 2025 IGTechnology. Todos los derechos reservados.
           </p>
         </div>
       </div>
