@@ -3,7 +3,7 @@ import { db } from "../data/db";
 import { Items } from "./items";
 
 export function Main({addToCart}) {
-  const [data, setData] = useState(db);
+  const [data] = useState(db);
 
   return (
     <main className="py-5 bg-light min-vh-100">

@@ -5,7 +5,7 @@ export function Fotter() {
         <div className="row">
           <div className="col-md-4 mb-3">
             <img
-              src="src/img/igtechnology.png"
+              src="public/img/igtechnology.png"
               alt="Logo"
               width="auto"
               height="40"

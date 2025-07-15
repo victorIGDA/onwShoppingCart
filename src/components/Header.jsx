@@ -1,16 +1,16 @@
 
-import { useMemo } from "react";
 
-export function Header({cart,addToCart,clearCart,reduceQuantity}) {
 
-  const cartTotal=useMemo(()=> cart.reduce((total,item)=>total+(item.quantity * item.price),0),[cart])
+export function Header({cart,addToCart,clearCart,reduceQuantity,removeFromCart}) {
+
+  const cartTotal=()=> cart.reduce((total,item)=>total+(item.quantity * item.precio),0);
 
   return (
 <header>
   <nav className="navbar navbar-expand-lg navbar-dark bg-dark position-relative">
     <div className="container">
       <a className="navbar-brand" href="#">
-        <img src="src/img/igtechnology.png" alt="Logo" height="40" />
+        <img src="public/img/igtechnology.png" alt="Logo" height="40" />
       </a>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span className="navbar-toggler-icon"></span>
@@ -46,7 +46,7 @@ export function Header({cart,addToCart,clearCart,reduceQuantity}) {
                 <tbody>
                   {cart.map(items=>
                   <tr className=" items-container text-center mt-5 bg-danger">
-                    <td><img src={`src/img/${items.imagen}`} alt="producto" /></td>
+                    <td><img src={`public/img/${items.imagen}`} alt="producto" /></td>
                     <td>{items.nombre}</td>
                     <td><strong>{items.precio}</strong></td>
                     <td>
@@ -56,7 +56,7 @@ export function Header({cart,addToCart,clearCart,reduceQuantity}) {
                         <button class="btn btn-dark btn-cart btn-sm  ms-1" onClick={()=>addToCart(items)} >+</button>
                       </div>
                     </td>
-                    <td><button className="btn  btn-danger btn-sm rounded-circle"><i className="bi bi-x"></i></button></td>
+                    <td><button className="btn  btn-danger btn-sm rounded-circle" onClick={()=>removeFromCart(items)}><i className="bi bi-x"></i></button></td>
                   </tr>
 
               )}
@@ -65,7 +65,7 @@ export function Header({cart,addToCart,clearCart,reduceQuantity}) {
               </table>
 
               <div className="d-flex justify-content-between px-2">
-                <strong>Total pagar:</strong> <span className="fw-bold text-success">{cartTotal}</span>
+                <strong>Total pagar:</strong> <span className="fw-bold text-success">{cartTotal().toFixed(2)}</span>
               </div>
 
               <div className="mt-3 text-center">

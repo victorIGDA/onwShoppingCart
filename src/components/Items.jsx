@@ -7,7 +7,7 @@ export function Items({item,addToCart}) {
     <div className="col mt-5">
       <div className="card h-100 shadow-sm border-0 rounded-4">
         <img
-          src={`src/img/${item.imagen}`}
+          src={`public/img/${item.imagen}`}
           className="card-img-top rounded-top-4"
           alt="Nintendo Switch"
         />
@@ -17,20 +17,21 @@ export function Items({item,addToCart}) {
           <p className="card-text text-muted small">
            {item.descripcion}
           </p>
-          <dir className="d-flex m-0 p-0">
+          <div className="d-flex m-0 p-0">
             <i className="bi bi-star-fill me-1 text-warning"></i>
             <i className="bi bi-star-fill me-1 text-warning"></i>
             <i className="bi bi-star-fill me-1 text-warning"></i>
             <i className="bi bi-star-fill me-1 text-warning"></i>
             <i className="bi bi-star-fill me-1 text-warning"></i>
-          </dir>
+          </div>
+          <span className="fw-bold text-success fs-5">${item.precio}</span>
         </div>
 
         <div className="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
-          <span className="fw-bold text-success fs-6">${item.precio}</span>
-          <button className="btn btn-sm btn-danger rounded-pill p-2" onClick={()=>addToCart(item)}>
+          
+          <button className="btn btn-sm w-100 btn-danger rounded-pill p-2" onClick={()=>addToCart(item)}>
             <i className="bi bi-cart-plus ms-2 me-1 "></i>
-            <span className="me-2">Agregar al carrito</span>
+            <span className="me-2 fw-bold">Agregar al carrito</span>
           </button>
         </div>
       </div>
